@@ -9,22 +9,14 @@ public class SaveManager : MonoBehaviour
     [SerializeField]
     private SaveData save;
 
+    void Awake()
+    {
+        save = new SaveData();
+    }
+
     void start()
     {   
         filePath = Application.persistentDataPath + "/" + ".savedata.json";
-        save = new SaveData();
-
-        FlagListEntity flagListEntity = new FlagListEntity();
-        //save.itemFlagList = flagListEntity.itemFlagList;  //これはダメだった
-        //おそらく、参照型だから。で、参照型をどうやって渡す？
-        //アドレス渡しても参照元消滅するので
-        Debug.Log("itemFlagListのLength_" + flagListEntity.itemFlagList.Count);
-        for (int i = 0; flagListEntity.itemFlagList.Count > i; i++)
-        {
-            Debug.Log("saveにitemflagのレコード追加している");
-            save.itemFlagList.Add(flagListEntity.itemFlagList[i]);
-        }
-        Debug.Log("save_length_" + save.itemFlagList.Count);
     }
     public void Save()
     {

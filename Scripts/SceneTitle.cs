@@ -28,8 +28,6 @@ public class SceneTitle : MonoBehaviour
 
     void Awake()
     {
-        //SaveDataê∂ê¨
-        //saveData = new SaveData();
     }
 
 
