@@ -75,7 +75,7 @@ public class SceneStage1 : MonoBehaviour
             Debug.Log("if•ª__0");
             Debug.Log("if•ª__0");
         }
-    }//ˆê’Ucommit•ª‚¯‚é‚©
+    }
 
     void Update()
     {
