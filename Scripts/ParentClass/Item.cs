@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// アイテムクラスの親クラス
+/// Itemsクラスに派生する
+/// </summary>
 [System.Serializable]
 public class Item 
 {
     // 列挙型：種類を列挙する
     public enum Type
     {
-        One,    //最大HPの上限を上昇させるアイテム
-        Two,    //HPを回復させるアイテム
-        Three,  //ATKを増加させるアイテム
-        Four,   //DEFを増加させるアイテム
-
+        MaxHPUP,    //最大HPの上限を上昇させるアイテム
+        HealHP,    //HPを回復させるアイテム
+        ATKUP,  //ATKを増加させるアイテム
+        DEFUP,   //DEFを増加させるアイテム
+        MONEYUP,    //MONEYを増加させるアイテム
+        Other,      //その他 鍵や帰還アイテム、重要アイテムなど
     }
 
-    public Type type;       //種類
+    public Type type;       //アイテムの種類
     public Sprite sprite;   //Slotに表示する画像
 
     [SerializeField]
-    int ItemID;
+    int ItemID;             //アイテム図鑑と連携させる為のID
+    [SerializeField]
+    float Value;            //効果値 HPだったら50回復するとか。
 
     /// <summary>
     /// アイテム生成しない方
@@ -37,6 +44,9 @@ public class Item
         this.type = type;
         this.sprite = sprite;
     }
+
+    //★いずれ、各変数のGetter,Setter作る
+
 }
 
 

@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-//このフラグクラスを親クラスにする
 /// <summary>
 /// フラグクラスの親クラス
-/// EnemyFlagやItemFlag、ProgressParamFlagに派生する
+/// EnemyFlagやItemFlag、ProgressParamFlagに派生する <-？何いってるか不明w
 /// </summary>
-[Serializable]
+[System.Serializable]
 public class Flag 
 {
     // 列挙型：種類を列挙する

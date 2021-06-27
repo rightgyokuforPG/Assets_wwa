@@ -7,19 +7,20 @@ public class SaveManager : MonoBehaviour
 {
     string filePath;
     [SerializeField]
-    private SaveData save;
+    public SaveData save;
 
     void Awake()
     {
         save = new SaveData();
+        filePath = Application.persistentDataPath + "/" + ".savedata.json";
     }
 
     void start()
     {   
-        filePath = Application.persistentDataPath + "/" + ".savedata.json";
     }
     public void Save()
     {
+        //Debug.Log("ファイルパス_＝_" + filePath);
         string json = JsonUtility.ToJson(save);
 
         StreamWriter streamWriter = new StreamWriter(filePath);
@@ -44,5 +45,10 @@ public class SaveManager : MonoBehaviour
     public SaveData GetSave()
     {
         return this.save;
+    }
+
+    public void SetSave(SaveData save)
+    {
+        this.save = save;
     }
 }
